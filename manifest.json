@@ -1,0 +1,16 @@
+{
+    "name": "秋殇の博客",
+    "short_name": "秋殇",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "description": "秋殇の博客",
+    "theme_color": "blue",
+    "icons": [
+      {
+        "src": "./images/leaf-1.jpg",
+        "sizes": "144x144",
+        "type": "image/jpg"
+      }
+    ]
+}

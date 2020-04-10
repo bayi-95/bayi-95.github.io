@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>关于Vue下组件引入第三方外部外链Js几种方式 | 秋殇の博客</title>
+    <meta name="description" content="秋殇の博客，学习心得，日志，笔记...">
+    <link rel="icon" href="/images/leaf-1.jpg">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#235dc8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/leaf-1.jpg">
+  <link rel="mask-icon" href="/images/leaf-1.jpg" color="#235dc8">
+  <meta name="msapplication-TileImage" content="/images/leaf-1.jpg">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.203c6911.css" as="style"><link rel="preload" href="/assets/js/app.a57da3d5.js" as="script"><link rel="preload" href="/assets/js/3.9ef79fcc.js" as="script"><link rel="preload" href="/assets/js/30.49e27b92.js" as="script"><link rel="preload" href="/assets/js/8.cbf7bdec.js" as="script"><link rel="prefetch" href="/assets/js/10.fb132031.js"><link rel="prefetch" href="/assets/js/11.0681e1e8.js"><link rel="prefetch" href="/assets/js/12.5f443c91.js"><link rel="prefetch" href="/assets/js/13.2462a100.js"><link rel="prefetch" href="/assets/js/14.06fba456.js"><link rel="prefetch" href="/assets/js/15.87adf84b.js"><link rel="prefetch" href="/assets/js/16.bd57391d.js"><link rel="prefetch" href="/assets/js/17.d739a131.js"><link rel="prefetch" href="/assets/js/18.2f67d38b.js"><link rel="prefetch" href="/assets/js/19.7b8463ae.js"><link rel="prefetch" href="/assets/js/20.84cdbca1.js"><link rel="prefetch" href="/assets/js/21.b604dcd6.js"><link rel="prefetch" href="/assets/js/22.00d17d08.js"><link rel="prefetch" href="/assets/js/23.3c3a4ce3.js"><link rel="prefetch" href="/assets/js/24.379489b6.js"><link rel="prefetch" href="/assets/js/25.e1734726.js"><link rel="prefetch" href="/assets/js/26.0c7de951.js"><link rel="prefetch" href="/assets/js/27.ee9474ed.js"><link rel="prefetch" href="/assets/js/28.23b840a4.js"><link rel="prefetch" href="/assets/js/29.fe94ad03.js"><link rel="prefetch" href="/assets/js/31.53e1c2c5.js"><link rel="prefetch" href="/assets/js/4.b5922726.js"><link rel="prefetch" href="/assets/js/5.e8aacdb8.js"><link rel="prefetch" href="/assets/js/6.3889e0d2.js"><link rel="prefetch" href="/assets/js/7.aad75bfe.js"><link rel="prefetch" href="/assets/js/9.1a742798.js"><link rel="prefetch" href="/assets/js/vendors~notification.a618ab5b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.203c6911.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/leaf-1.jpg" alt="秋殇の博客" class="logo"> <span class="site-name can-hide">秋殇の博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="分类" class="dropdown-title"><span class="title">分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/vue/code.html" class="nav-link">vue</a></li><li class="dropdown-item"><!----> <a href="/pages/react/code.html" class="nav-link">react</a></li><li class="dropdown-item"><!----> <a href="/pages/react-native/code.html" class="nav-link">react-native</a></li><li class="dropdown-item"><!----> <a href="/pages/python/code.html" class="nav-link">python</a></li><li class="dropdown-item"><!----> <a href="/pages/javascript/code.html" class="nav-link">javascript</a></li></ul></div></div><div class="nav-item"><a href="/pages/logs/index.html" class="nav-link">日志</a></div><div class="nav-item"><a href="https://github.com/bayi-95" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="分类" class="dropdown-title"><span class="title">分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/vue/code.html" class="nav-link">vue</a></li><li class="dropdown-item"><!----> <a href="/pages/react/code.html" class="nav-link">react</a></li><li class="dropdown-item"><!----> <a href="/pages/react-native/code.html" class="nav-link">react-native</a></li><li class="dropdown-item"><!----> <a href="/pages/python/code.html" class="nav-link">python</a></li><li class="dropdown-item"><!----> <a href="/pages/javascript/code.html" class="nav-link">javascript</a></li></ul></div></div><div class="nav-item"><a href="/pages/logs/index.html" class="nav-link">日志</a></div><div class="nav-item"><a href="https://github.com/bayi-95" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Vue 学习</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/vue/code.html" class="sidebar-link">30 seconds of code</a></li><li><a href="/pages/vue/source.html" class="sidebar-link">资源链接 🔗</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="关于vue下组件引入第三方外部外链js几种方式"><a href="#关于vue下组件引入第三方外部外链js几种方式" class="header-anchor">#</a> 关于Vue下组件引入第三方外部外链Js几种方式</h2> <p>https://blog.csdn.net/u010881899/article/details/80895661</p> <h2 id="nginx一键配置"><a href="#nginx一键配置" class="header-anchor">#</a> nginx一键配置</h2> <p>https://nginxconfig.io/</p> <p><img src="/logo.jpg" alt=""></p> <h2 id="lodash按需加载"><a href="#lodash按需加载" class="header-anchor">#</a> lodash按需加载</h2> <p>https://www.jianshu.com/p/f03ff4f3a8b3</p> <h2 id="threejs"><a href="#threejs" class="header-anchor">#</a> threeJs</h2> <h4 id="中文教程"><a href="#中文教程" class="header-anchor">#</a> 中文教程</h4> <div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>This is a warning</p></div> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token comment">/**
+ * Promise 实现 遵循promise/A+规范
+ * Promise/A+规范译文:
+ * https://malcolmyu.github.io/2015/06/12/Promises-A-Plus/#note-4
+ */</span>
+
+<span class="token comment">// promise 三个状态</span>
+<span class="token keyword">const</span> <span class="token constant">PENDING</span> <span class="token operator">=</span> <span class="token string">&quot;pending&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token constant">FULFILLED</span> <span class="token operator">=</span> <span class="token string">&quot;fulfilled&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token constant">REJECTED</span> <span class="token operator">=</span> <span class="token string">&quot;rejected&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">Promise</span><span class="token punctuation">(</span><span class="token parameter">excutor</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> that <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span> <span class="token comment">// 缓存当前promise实例对象</span>
+    that<span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token constant">PENDING</span><span class="token punctuation">;</span> <span class="token comment">// 初始状态</span>
+    that<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span> <span class="token comment">// fulfilled状态时 返回的信息</span>
+    that<span class="token punctuation">.</span>reason <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span> <span class="token comment">// rejected状态时 拒绝的原因</span>
+    that<span class="token punctuation">.</span>onFulfilledCallbacks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 存储fulfilled状态对应的onFulfilled函数</span>
+    that<span class="token punctuation">.</span>onRejectedCallbacks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 存储rejected状态对应的onRejected函数</span>
+
+    <span class="token keyword">function</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// value成功态时接收的终值</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>value <span class="token keyword">instanceof</span> <span class="token class-name">Promise</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> value<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// 为什么resolve 加setTimeout?</span>
+        <span class="token comment">// 2.2.4规范 onFulfilled 和 onRejected 只允许在 execution context 栈仅包含平台代码时运行.</span>
+
+        <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 调用resolve 回调对应onFulfilled函数</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>that<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token constant">PENDING</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 只能由pending状态 =&gt; fulfilled状态 (避免调用多次resolve reject)</span>
+                that<span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token constant">FULFILLED</span><span class="token punctuation">;</span>
+                that<span class="token punctuation">.</span>value <span class="token operator">=</span> value<span class="token punctuation">;</span>
+                that<span class="token punctuation">.</span>onFulfilledCallbacks<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">cb</span> <span class="token operator">=&gt;</span> <span class="token function">cb</span><span class="token punctuation">(</span>that<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">function</span> <span class="token function">reject</span><span class="token punctuation">(</span><span class="token parameter">reason</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// reason失败态时接收的拒因</span>
+        <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 调用reject 回调对应onRejected函数</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>that<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token constant">PENDING</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 只能由pending状态 =&gt; rejected状态 (避免调用多次resolve reject)</span>
+                that<span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token constant">REJECTED</span><span class="token punctuation">;</span>
+                that<span class="token punctuation">.</span>reason <span class="token operator">=</span> reason<span class="token punctuation">;</span>
+                that<span class="token punctuation">.</span>onRejectedCallbacks<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">cb</span> <span class="token operator">=&gt;</span> <span class="token function">cb</span><span class="token punctuation">(</span>that<span class="token punctuation">.</span>reason<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 捕获在excutor执行器中抛出的异常</span>
+    <span class="token comment">// new Promise((resolve, reject) =&gt; {</span>
+    <span class="token comment">//     throw new Error('error in excutor')</span>
+    <span class="token comment">// })</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token function">excutor</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token function">eggch</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">reject</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">1/21/2020, 5:02:00 PM</span></div></footer> <!----> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.a57da3d5.js" defer></script><script src="/assets/js/3.9ef79fcc.js" defer></script><script src="/assets/js/30.49e27b92.js" defer></script><script src="/assets/js/8.cbf7bdec.js" defer></script>
+  </body>
+</html>
